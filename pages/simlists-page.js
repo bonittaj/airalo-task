@@ -1,4 +1,5 @@
 import { BasePage } from "./base-page";
+
 export class SimPage extends BasePage {
   constructor(page) {
     super(page);

@@ -12,10 +12,12 @@ let browser;
 let context;
 let page;
 let EsimDetail;
+let isHeadless;
 
 test.beforeAll(async () => {
   browser = await chromium.launch();
   context = await browser.newContext();
+  isHeadless = browser._options?.headless ?? true;
 });
 
 test.beforeEach(async () => {
@@ -23,12 +25,12 @@ test.beforeEach(async () => {
   Home = new HomePage(page)
   Sim = new SimPage(page)
   EsimDetail = new SimDetailPage(page)
+  
   await page.goto(`${process.env.BASEURL}`, { waitUntil: 'load' });
-  await page.click('#onetrust-accept-btn-handler');
-  await page.click("#wzrk-confirm");
+  if (!isHeadless) await Home.acceptCookies()
 });
 
-test(`Verification of Search functionality with valid keyword: ${validKeyword}`, async () => {
+test(`esim data vefification: ${validKeyword}`, async () => {
   await expect(await Home.searchBarVisibility()).toBe(true);
   await Home.enterKeyword(`${validKeyword}`)
   await Home.selectCountry(`${validKeyword}`)

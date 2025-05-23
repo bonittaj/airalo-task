@@ -1,7 +1,5 @@
-name: Playwright Tests
+name: Airalo E2E Tests
 on:
-  push:
-    branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
 jobs:
@@ -17,9 +15,9 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
-    - name: Run Playwright UI tests
+    - name: Run UI tests
       run: npm run test:ui
-    - name: Run Playwright API tests
+    - name: Run API tests
       run: npm run test:api
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}

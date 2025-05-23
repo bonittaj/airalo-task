@@ -1,5 +1,4 @@
-const { request } = require('@playwright/test');
-require('dotenv').config();
+import { request } from '@playwright/test';
 
 async function generateAccessToken() {
   const requestContext = await request.newContext();
