@@ -11,7 +11,7 @@ jobs:
     env:
       CLIENT_ID: ${{ secrets.CLIENT_ID }}
       CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
-      CI: ${{ secrets.CI }}
+      CI: ${{ vars.CI }}
 
     steps:
       - name: Debug CI env
