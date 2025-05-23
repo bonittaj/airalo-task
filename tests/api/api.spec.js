@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import {generateAccessToken} from '../../config/global-setup'
+import {generateAccessToken} from '../../util/token.js'
 import dotenv from 'dotenv';
 dotenv.config();
 
