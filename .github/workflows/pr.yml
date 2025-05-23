@@ -11,6 +11,7 @@ jobs:
     env:
       CLIENT_ID: ${{ secrets.CLIENT_ID }}
       CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+      CI: ${{ secrets.CI }}
 
     steps:
       - uses: actions/checkout@v4
