@@ -1,10 +1,10 @@
-# 📱 Airalo UI & API Automation
+#  Airalo UI & API Automation
 
 This repository contains automated test cases for [Airalo](https://www.airalo.com) covering both UI and API layers. The automation is implemented using **Playwright** and **JavaScript**, following best practices like the **Page Object Model (POM)** and CI/CD integration with GitHub Actions.
 
 ---
 
-## 🔑 Key Features
+## Key Features
 
 - **UI Test Automation** using Playwright  
 - **API Test Automation** using Playwright Test and REST API  
@@ -14,7 +14,7 @@ This repository contains automated test cases for [Airalo](https://www.airalo.co
 
 ---
 
-## 🔁 Implementation Approach
+## Implementation Approach
 
 - **Requirement Analysis** – Understand the application's UI flow and API functionality  
 - **Test Case Design** – Define test scenarios covering positive, negative, and edge cases  
@@ -25,7 +25,7 @@ This repository contains automated test cases for [Airalo](https://www.airalo.co
 
 ---
 
-## 🛠️ Setup Instructions
+## Setup Instructions
 
 ### Prerequisites
 - Ensure **Node.js** and **npm** are installed
