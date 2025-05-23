@@ -32,8 +32,9 @@ This repository contains automated test cases for [Airalo](https://www.airalo.co
 
 ### Installation
 ```bash
-git clone <repo-url>
-cd <project-directory>
+git clone https://github.com/bonittaj/airalo-task.git
+cd airalo-task
+
 npm install
 ```
 ### Environment Setup
