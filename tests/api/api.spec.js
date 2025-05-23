@@ -1,13 +1,19 @@
 import { test, expect } from '@playwright/test';
+import {generateAccessToken} from '../../config/global-setup'
 import dotenv from 'dotenv';
 dotenv.config();
 
 let newlyCreatedSims = []
+let accessToken;
+
+test.beforeAll(async () => {
+  accessToken = await generateAccessToken();
+});
 test.describe('POST Submit Order for 6 sims', () => {
     test('Test POST request - 6 sims', async ({ request }) => {
-        const response = await request.post('https://sandbox-partners-api.airalo.com/v2/orders', {
+        const response = await request.post(`${process.env.API_URL}/orders`, {
             headers: {
-                authorization: `Bearer ${process.env.ACCESS_TOKEN}`,
+                authorization: `Bearer ${accessToken}`,
                 'Content-Type': 'application/json',
             },
             data: {
@@ -27,9 +33,9 @@ test.describe('POST Submit Order for 6 sims', () => {
 
 test.describe('GET Sim data', () => {
     test('Test GET request', async ({ request }) => {
-        const response = await request.get('https://sandbox-partners-api.airalo.com/v2/sims', {
+        const response = await request.get(`${process.env.API_URL}/sims`, {
             headers: {
-                authorization: `Bearer ${process.env.ACCESS_TOKEN}`,
+                authorization: `Bearer ${accessToken}`,
                 'Content-Type': 'application/json',
             }
         });
@@ -44,9 +50,9 @@ test.describe('GET Sim data', () => {
 
 test.describe('POST Submit Order for 0 sims', () => {
     test('POST Submit Order for 0 products', async ({ request }) => {
-        const response = await request.post('https://sandbox-partners-api.airalo.com/v2/orders', {
+        const response = await request.post(`${process.env.API_URL}/orders`, {
             headers: {
-                authorization: `Bearer ${process.env.ACCESS_TOKEN}`,
+                authorization: `Bearer ${accessToken}`,
                 'Content-Type': 'application/json',
             },
             data: {
@@ -66,9 +72,9 @@ test.describe('POST Submit Order for 0 sims', () => {
 
 test.describe('POST Sumit order for 60 sims', () => {
     test('POST Sumit order for 60 products', async ({ request }) => {
-        const response = await request.post('https://sandbox-partners-api.airalo.com/v2/orders', {
+        const response = await request.post(`${process.env.API_URL}/orders`, {
             headers: {
-                authorization: `Bearer ${process.env.ACCESS_TOKEN}`,
+                authorization: `Bearer ${accessToken}`,
                 'Content-Type': 'application/json'
             },
             data: {
@@ -87,9 +93,9 @@ test.describe('POST Sumit order for 60 sims', () => {
 
 test.describe('POST Sumit order for invalid package name', () => {
     test('POST Sumit order for invalid package products', async ({ request }) => {
-        const response = await request.post('https://sandbox-partners-api.airalo.com/v2/orders', {
+        const response = await request.post(`${process.env.API_URL}/orders`, {
             headers: {
-                authorization: `Bearer ${process.env.ACCESS_TOKEN}`,
+                authorization: `Bearer ${accessToken}`,
                 'Content-Type': 'application/json'
             },
             data: {
@@ -107,7 +113,7 @@ test.describe('POST Sumit order for invalid package name', () => {
 
 test.describe('POST Submit order without access token', () => {
     test('POST Submit order without access token', async ({ request }) => {
-        const response = await request.post('https://sandbox-partners-api.airalo.com/v2/orders', {
+        const response = await request.post(`${process.env.API_URL}/orders`, {
             headers: {
                 authorization: `Bearer`,
                 'Content-Type': 'application/json'

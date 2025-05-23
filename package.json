@@ -14,7 +14,7 @@
     "dotenv": "^16.5.0"
   },
   "scripts": {
-    "test:ui": "npx playwright test tests/ui --headed",
+    "test:ui": "npx playwright test tests/ui",
     "test:api": "npx playwright test tests/api",
     "test:all": "npx playwright test"
   }
