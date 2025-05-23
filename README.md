@@ -10,7 +10,8 @@ This repository contains automated test cases for [Airalo](https://www.airalo.co
 - **API Test Automation** using Playwright Test and REST API  
 - **Structured with Page Object Model (POM)**  
 - **CI/CD Integration** with GitHub Actions  
-- **.env support** for managing sensitive credentials  
+- **.env support** for managing sensitive credentials
+- **HTML Report Integration  
 
 ---
 
@@ -20,7 +21,7 @@ This repository contains automated test cases for [Airalo](https://www.airalo.co
 - **Test Case Design** – Define test scenarios covering positive, negative, and edge cases  
 - **Framework Selection** – Chose Playwright for unified UI and API automation  
 - **POM Implementation** – Applied Page Object Model to structure UI tests efficiently  
-- **Reporting** – Integrated Allure for test reports  
+- **Reporting** – Integrated HTML report for test reports  
 - **CI/CD Setup** – Configured GitHub Actions to trigger tests automatically on commits and pull requests  
 
 ---
