@@ -29,6 +29,7 @@ test.describe('Esim Order placement', () => {
         const responseBody = await response.json();
         const simData = responseBody.data.sims;
         simData.forEach(sim => newlyCreatedSims.push(sim.id));
+        
     });
 
     test('Confirm fetch API contains newly ordered esims', async ({ request }) => {
