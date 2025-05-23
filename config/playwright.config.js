@@ -29,9 +29,9 @@ export default defineConfig({
     /* Base URL to use in actions like `await page.goto('/')`. */
     baseURL: 'https://sandbox-partners-api.airalo.com/v2',
 
-    screenshot: 'only-on-failure', // Capture screenshots only on failure
-    trace: 'retain-on-failure',    // Optional: useful for debugging
-    video: 'retain-on-failure',    // Optional: for failed tests
+    screenshot: 'on', // Capture screenshots only on failure
+    trace: 'on',    // Optional: useful for debugging
+    video: 'on',    // Optional: for failed tests
   },
   
   /* Configure projects for major browsers */
