@@ -11,7 +11,7 @@ This repository contains automated test cases for [Airalo](https://www.airalo.co
 - **Structured with Page Object Model (POM)**  
 - **CI/CD Integration** with GitHub Actions  
 - **.env support** for managing sensitive credentials
-- **HTML Report Integration  
+- **HTML Report Integration**
 
 ---
 
@@ -38,9 +38,14 @@ cd airalo-task
 npm install
 ```
 ### Environment Setup
-**Update the .env file with your CLIENT_ID and CLIENT_SECRET
+Update the .env file with your CLIENT_ID and CLIENT_SECRET
 ```bash
 npm run test:ui        # Run UI tests  
 npm run test:api       # Run API tests  
 npm run test:all       # Run all tests  
 ```
+### Execution through Github
+Execution step throuh Github
+- Click On Action 
+- Click on E2E Tests
+- Click on Run Workflow
