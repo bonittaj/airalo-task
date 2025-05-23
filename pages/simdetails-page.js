@@ -1,6 +1,8 @@
-exports.SimDetailPage = class SimDetailPage {
+import { BasePage } from "./base-page";
+export class SimDetailPage extends BasePage {
 
     constructor(page) {
+      super(page);
       this.simOperaterTitle = page.getByTestId('sim-detail-operator-title');
       this.simCoverageText = page.locator('.package-list-detail [data-testid="COVERAGE-row"]');
       this.simCoverageValue = page.locator('.package-list-detail [data-testid="COVERAGE-value"]');
